@@ -1,0 +1,30 @@
+<rss>
+    <channel>
+        <title>News</title>
+        <link>Link</link>
+        <description>Description</description>
+        <image>
+            <title>Test chanel</title>
+            <url>url</url>
+            <link>link</link>
+        </image>
+        <item>
+            <title>Test news 1</title>
+            <link>link11</link>
+            <description>Test description 1</description>
+            <pubDate>date1</pubDate>
+        </item>
+        <item>
+            <title>Test news 2</title>
+            <link>link2</link>
+            <description>Test description 2</description>
+            <pubDate>date2</pubDate>
+        </item>
+        <item>
+            <title>Test news 3</title>
+            <link>link3</link>
+            <description>Test description 3</description>
+            <pubDate>date3</pubDate>
+        </item>
+    </channel>
+</rss>

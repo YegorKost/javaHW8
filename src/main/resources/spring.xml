@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.yegor"/>
+
+    <bean id="startApp" class="com.yegor.app.StartAppImpl">
+        <property name="rangeOfUpdateSeconds" value="10"/>
+        <!--if durationOfWorkMinutes <= 0 then the app will be worked all time-->
+        <property name="durationOfWorkMinutes" value="60"/>
+    </bean>
+
+    <bean id="readNews" class="com.yegor.news.ReadNewsImpl">
+        <property name="rss" value="http://24tv.ua/rss/all.xml"/>
+    </bean>
+
+    <bean id="cachedNews" class="com.yegor.cachedNews.CachedNewsImpl">
+        <property name="batchForUpdate" value="5"/>
+        <property name="batchForOutput" value="10"/>
+    </bean>
+
+    <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
+
+    <bean id="fileForOutput" class="java.io.File">
+        <constructor-arg value="news.txt"/>
+    </bean>
+
+</beans>
